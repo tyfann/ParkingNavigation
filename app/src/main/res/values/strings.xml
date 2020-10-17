@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PARK</string>
+    <string-array name="main_menu">
+        <item>停车</item>
+        <item>寻找车</item>
+        <item>我的地图</item>
+        <item>管理员登陆</item>
+        <item>付费</item>
+        <item>查询</item>
+        <item>信息</item>
+        <item>反馈</item>
+    </string-array>
+
+</resources>
