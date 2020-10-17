@@ -1,3 +1,4 @@
+# Created by .ignore support plugin (hsz.mobi)
 
 *.iml
 *.iws
@@ -6,6 +7,6 @@
 .gradle/
 local.properties
 */build/
- 
+
 *~
 *.swp
