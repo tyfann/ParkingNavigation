@@ -1,32 +1,40 @@
 package com.example.park.fragment;
 
 public class InputMap {
-    public static int[] getX() {
+    private int x;
+    private int y;
+    private int values;
+
+    public InputMap() {
+    }
+
+    public InputMap(int x, int y, int values) {
+        this.x = x;
+        this.y = y;
+        this.values = values;
+    }
+
+    public int getX() {
         return x;
     }
 
-    public static void setX(int[] x) {
-        InputMap.x = x;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public static int[] getY() {
+    public int getY() {
         return y;
     }
 
-    public static void setY(int[] y) {
-        InputMap.y = y;
+    public void setY(int y) {
+        this.y = y;
     }
 
-    public static int[] getValues() {
+    public int getValues() {
         return values;
     }
 
-    public static void setValues(int[] values) {
-        InputMap.values = values;
+    public void setValues(int values) {
+        this.values = values;
     }
-
-    public static int[] x;
-    public static int[] y;
-    public static int[] values;
-
 }

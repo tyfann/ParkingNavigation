@@ -8,9 +8,11 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.park.fragment.InputMap;
 import com.example.park.fragment.Parking;
 import com.example.park.util.DateUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
@@ -22,7 +24,7 @@ import cn.bmob.v3.listener.SaveListener;
 public class ScanResultActivity extends AppCompatActivity {
 
     TextView tv_scanResult;
-
+    List<InputMap> inputMaps;
     public String scan_time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +58,22 @@ public class ScanResultActivity extends AppCompatActivity {
             @Override
             public void done(List<Parking> object, BmobException e) {
                 if(e==null){
+                    /*
                     Toast.makeText(ScanResultActivity.this,"缓存成功，共"+object.size()+"条数据",Toast.LENGTH_SHORT).show();
                     //List list=new ArrayList();
                     String s="";
+                     */
+                    inputMaps = new ArrayList<>();
+                    InputMap inputMap1;
                     for(int i=0;i<object.size();i++){
                         //text_print.setText("X坐标："+object.get(i).getCo_X()+"Y坐标："+object.get(i).getCo_Y());
                         //list.add("X坐标："+object.get(i).getCo_X()+"Y坐标："+object.get(i).getCo_Y());
                         // if(object.get(i).getEmptyIF()==Boolean.TRUE)
-                        s=s.concat("X坐标："+object.get(i).getCo_X()+" Y坐标："+object.get(i).getCo_Y()+object.get(i).getEmptyIF()+"\n");
+                        inputMap1 = new InputMap(object.get(i).getCo_X(),object.get(i).getCo_Y(),object.get(i).getValues());
+                        inputMaps.add(inputMap1);
+                        //s=s.concat("X坐标："+object.get(i).getCo_X()+" Y坐标："+object.get(i).getCo_Y()+object.get(i).getEmptyIF()+"\n");
                     }
-                    tv_scanResult.setText(s);
+                    //tv_scanResult.setText(s);
 
                 }else{
                     Toast.makeText(ScanResultActivity.this,"缓存失败",Toast.LENGTH_SHORT).show();

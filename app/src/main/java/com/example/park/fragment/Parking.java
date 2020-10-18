@@ -3,7 +3,18 @@ package com.example.park.fragment;
 import cn.bmob.v3.BmobObject;
 
 public class Parking extends BmobObject {
-    Integer Co_X,Co_Y;
+    Integer Co_X;
+    Integer Co_Y;
+
+    public Integer getValues() {
+        return Values;
+    }
+
+    public void setValues(Integer values) {
+        Values = values;
+    }
+
+    Integer Values;
     Boolean EmptyIF;
 
     public void setCo_X(Integer co_X) {
