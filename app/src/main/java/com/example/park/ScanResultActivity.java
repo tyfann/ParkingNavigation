@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.park.findroad.New;
 import com.example.park.fragment.InputMap;
 import com.example.park.fragment.Parking;
 import com.example.park.util.DateUtil;
@@ -21,11 +22,14 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 
-public class ScanResultActivity extends AppCompatActivity {
+
+public class ScanResultActivity extends AppCompatActivity{
 
     TextView tv_scanResult;
     List<InputMap> inputMaps;
     public String scan_time;
+    char selection;
+    New anew;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +68,7 @@ public class ScanResultActivity extends AppCompatActivity {
                     String s="";
                      */
                     inputMaps = new ArrayList<>();
-                    InputMap inputMap1;
+                    InputMap inputMap1 = null;
                     for(int i=0;i<object.size();i++){
                         //text_print.setText("X坐标："+object.get(i).getCo_X()+"Y坐标："+object.get(i).getCo_Y());
                         //list.add("X坐标："+object.get(i).getCo_X()+"Y坐标："+object.get(i).getCo_Y());
@@ -73,10 +77,12 @@ public class ScanResultActivity extends AppCompatActivity {
                         inputMaps.add(inputMap1);
                         //s=s.concat("X坐标："+object.get(i).getCo_X()+" Y坐标："+object.get(i).getCo_Y()+object.get(i).getEmptyIF()+"\n");
                     }
+                    selection='A';
+                    anew.PrintParkingPath(inputMaps,selection);
                     //tv_scanResult.setText(s);
 
                 }else{
-                    Toast.makeText(ScanResultActivity.this,"缓存失败",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ScanResultActivity.this,"缓存失败"+e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
             }
         });
