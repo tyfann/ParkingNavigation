@@ -50,7 +50,7 @@ public class Mapfragment extends Fragment {
             Parking parking=new Parking();
             parking.setCo_X(i);
             parking.setCo_Y(i);
-            parking.setEmptyIF(Boolean.TRUE);
+            parking.setValues(i);
             parkings.add(parking);
         }
         new BmobBatch().insertBatch(parkings).doBatch(new QueryListListener<BatchResult>() {
@@ -104,7 +104,6 @@ public class Mapfragment extends Fragment {
     }
     private void updataParking() {
         Parking p = new Parking();
-        p.setEmptyIF(Boolean.FALSE);
         //objectId改成需要修改的数据的objectId，下面只是举了个例子
         p.update("ba84a596fa", new UpdateListener() {
             @Override

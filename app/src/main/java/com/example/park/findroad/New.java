@@ -1,6 +1,8 @@
 package com.example.park.findroad;
 
 
+import android.util.Log;
+
 import com.example.park.fragment.InputMap;
 
 import java.util.Deque;
@@ -78,8 +80,9 @@ public class New {
         des[1] = temp2;
     }
 
-    public  void PrintParkingPath(List<InputMap> inputMap,char selection)
+    public static void PrintParkingPath(List<InputMap> inputMap,char selection)
     {
+        Log.v("MainActivity","Log.v输入日志信息");
         AstarPathPlan astarPathPlan = null;
 
         for(int i=0;i<200;i++)

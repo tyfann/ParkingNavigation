@@ -22,13 +22,6 @@ public class Parking extends BmobObject {
         return Co_Y;
     }
 
-    public void setEmptyIF(Boolean emptyIF) {
-        EmptyIF = emptyIF;
-    }
-
-    public Boolean getEmptyIF() {
-        return EmptyIF;
-    }
     public Integer getValues() {
         return Values;
     }
