@@ -82,7 +82,6 @@ public class New {
 
     public static void PrintParkingPath(List<InputMap> inputMap,char selection)
     {
-        Log.v("MainActivity","Log.v输入日志信息");
         AstarPathPlan astarPathPlan = null;
 
         for(int i=0;i<200;i++)
